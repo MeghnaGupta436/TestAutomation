@@ -1,22 +1,22 @@
 Feature: To perform CRUD operations on an rest API
 
-  Scenario: Retrieve information of all employees
+  Scenario: Retrieve information of all users
     When Get request is hit
-    Then All employees data is shown
+    Then All users list is shown
 
-  Scenario: Retrieve information of a single employee
-    When Get request for single Employee
-    Then Single employee data is shown
+  Scenario: Retrieve information of a single user
+    When Get request for single user
+    Then Single user data is shown
 
-  Scenario: create a new employee
+  Scenario: create a new user
     When Post request is hit
-    Then new employee is created successfully
+    Then new user is created successfully
 
-  Scenario:Update an employee data
+  Scenario:Update a user data
       When Put request for update
       Then record updated successfully
 
-  Scenario: Delete an employee data
+  Scenario: Delete an user data
     When Delete request for deletion
     Then record deleted successfully
 
