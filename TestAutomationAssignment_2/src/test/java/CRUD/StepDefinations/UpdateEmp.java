@@ -13,9 +13,15 @@ public class UpdateEmp {
 
     @When("Put request for update")
     public void PutUpdateEmp() {
+        String updateBody="{\n" +
+                "    \"name\": \"morpheus\",\n" +
+                "    \"job\": \"zion resident\"\n" +
+                "}";
+
         response = given()
-                .baseUri("https://dummy.restapiexample.com/")
-                .basePath("api/v1/update/21")
+                .baseUri("https://reqres.in/")
+                .basePath("api/users/2")
+                .body(updateBody)
                 .when().put()
                 .then().extract().response();
     }
@@ -23,5 +29,6 @@ public class UpdateEmp {
     @Then("record updated successfully")
     public void updateResponse(){
         response.then().statusCode(200);
+        System.out.println(response.statusLine());
     }
 }
